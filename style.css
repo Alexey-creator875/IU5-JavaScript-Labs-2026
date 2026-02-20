@@ -7,10 +7,16 @@
   width: 100%;
 }
 
-.logo {
+.header > img {
+  padding-top: 15px;
+  padding-left: 60px;
+  height: 40px;
+}
+
+.name {
   position: absolute;
   top: 20px;
-  left: 40px;
+  left: 140px;
 
   font-size: 24px;
   color: rgb(73, 73, 73);
@@ -83,14 +89,21 @@ body {
 .main {
   display: flex;
   justify-content: center;
+  padding-top: 130px;
+}
+
+.main > p {
+  color: #fff;
+  font-size: 15px;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
 }
 
 .calculator {
-  position: absolute;
+  position: relative;
   background-color: rgba(0, 40, 100, 0.5);
 
   padding: 20px;
-  top: 150px;
+  border-radius: 15px;
 }
 
 .my-btn { 
@@ -98,7 +111,7 @@ body {
   margin-top: 5px;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 15px;
   border: none;
   background: #515151;
   color: white;
@@ -126,7 +139,7 @@ body {
 
 .my-btn.execute { 
   width: 110px;
-  border-radius: 34px;
+  border-radius: 15px;
 }
 
 .result { 
@@ -134,9 +147,10 @@ body {
   height: 50px;
   margin-bottom: 15px;
   padding-right: 10px;
+  border-radius: 15px;
   background: rgb(73, 73, 73);
   text-align: right;
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: "Segoe UI", "Trebuchet MS", sans-serif;
 }
