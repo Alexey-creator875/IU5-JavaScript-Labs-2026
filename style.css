@@ -1,0 +1,156 @@
+.header {
+  position: absolute;
+  background-color: white;
+  top: 0px;
+  left: 0px;
+  height: 75px;
+  width: 100%;
+}
+
+.header > img {
+  padding-top: 15px;
+  padding-left: 60px;
+  height: 40px;
+}
+
+.name {
+  position: absolute;
+  top: 20px;
+  left: 140px;
+
+  font-size: 24px;
+  color: rgb(73, 73, 73);
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+
+.tm {
+    position: absolute;
+    background: rgba(0, 40, 100, 0.5);
+    top: 75px;
+    left: 0px;
+    height: 55px;
+    width: 100%;
+    padding: 0px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0px;
+}
+
+.li1 {
+    display: flex;
+    top: 0px;
+    height: 55px;
+    align-items: center;
+}
+
+.li1 > a {
+    position:relative;
+    height: 55px;
+    padding: 0 8px;
+    line-height: 55px;
+
+    font-size: 15px;
+    color: #fff;
+    font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+    text-decoration: none;
+}
+
+.li1 > a:hover {
+    transition: all 0.3s linear;
+    color: #0bb5ff;
+    background: rgb(33, 65, 128);
+}
+
+.tm .li1 > a::before {
+    transition: all 0.3s linear;
+    display: block;
+    background: #fa0a11;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 3px;
+    content: "";
+}
+
+.tm .li1 > a:hover:before {
+    width: 100%;
+}
+
+body {
+  background-image: url(assets/images/rocket_upp.jpg);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding-top: 130px;
+}
+
+.main > p {
+  color: #fff;
+  font-size: 15px;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+.calculator {
+  position: relative;
+  background-color: rgba(0, 40, 100, 0.5);
+
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.my-btn { 
+  margin-right: 5px;
+  margin-top: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  background: #515151;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  cursor: pointer;
+  user-select: none;
+} 
+
+.my-btn:hover {
+  background: darkgray;
+}
+
+.my-btn:active {
+  filter: brightness(130%);
+}
+
+.my-btn.primary { 
+  background: #fa0a11;
+}
+
+.my-btn.secondary { 
+  background: #a6a6a6;
+}
+
+.my-btn.execute { 
+  width: 110px;
+  border-radius: 15px;
+}
+
+.result { 
+  width: 225px;
+  height: 50px;
+  margin-bottom: 15px;
+  padding-right: 10px;
+  border-radius: 15px;
+  background: rgb(73, 73, 73);
+  text-align: right;
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+}
