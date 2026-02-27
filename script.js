@@ -25,13 +25,11 @@ window.onload = function() {
 
     digitButtons.forEach(button => {
         button.onclick = function() {
-            // берем текст, написанный на кнопке - он и является цифрой
             const digitValue = button.innerHTML;
             onDigitButtonClicked(digitValue);
         }
     });
 
-    // Настраиваем обработчики для кнопок операций - сохраняем выбранную операцию в ранее созданную переменную selectedOperation
     document.getElementById("btn_op_mult").onclick = function() { 
         if (a === '') return;
         selectedOperation = 'x';
