@@ -91,6 +91,19 @@ window.onload = function() {
         outputElement.innerHTML = 0
     }
 
+    this.document.getElementById("btn_op_sign").onclick = function() {
+        if (!selectedOperation) {
+            let numberWithOppositeSign = (-a)
+            a = numberWithOppositeSign.toString()
+            outputElement.innerHTML = a
+        }
+        else {
+            let numberWithOppositeSign = (-b)
+            b = numberWithOppositeSign.toString()
+            outputElement.innerHTML = b
+        }
+    }
+
     document.getElementById("btn_op_equal").onclick = function() {
         if (a === '' || b === '' || !selectedOperation)
             return
