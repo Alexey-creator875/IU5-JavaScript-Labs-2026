@@ -1,5 +1,5 @@
 window.onload = function() { 
-    let a = ''
+    let a = '0'
     let b = ''
     let expressionResult = ''
     let selectedOperation = null
@@ -11,13 +11,25 @@ window.onload = function() {
     function onDigitButtonClicked(digit) {
         if (!selectedOperation) {
             if ((digit != '.') || (digit == '.' && !a.includes(digit))) { 
-                a += digit;
+                if (a === '0' && digit != '.') {
+                    a = digit
+                }
+                else {
+                    a += digit;
+                }
+
                 outputElement.innerHTML = a;
             }   
         }
         else {
             if ((digit != '.') || (digit == '.' && !b.includes(digit))) { 
-                b += digit;
+                if (b === '0' && digit != '.') {
+                    b = digit
+                }
+                else {
+                    b += digit;
+                }
+
                 outputElement.innerHTML = b;        
             }
         }
@@ -72,7 +84,7 @@ window.onload = function() {
     }
 
     document.getElementById("btn_op_clear").onclick = function() { 
-        a = ''
+        a = '0'
         b = ''
         selectedOperation = ''
         expressionResult = ''
