@@ -128,40 +128,29 @@ window.onload = function() {
         number = Math.abs(+number).toString();
         
         if (number.includes('.')) {
-            number = sign + MovePoint(number);
+            number = MovePoint(number);
         }
         else {
-            number = sign + AddPoint(number);
+            number = AddPoint(number);
         }
 
-        number = (+number).toString();
-
-        return number
+        return sign + RemoveExtraEndZero(number);
     }
 
     function MovePoint(number) {
-        if (number.startsWith('0.')) {
-            const afterPointPart = number.substring(2, number.length);
-            return '0.00' + afterPointPart;
-        }
+        const indexOfPoint = number.indexOf('.');
+        const beforePointPart = number.substring(0, indexOfPoint);
+        const afterPointPart = number.substring(indexOfPoint + 1, number.length);
 
         if (number.indexOf('.') == 1) {
-            const beforePointPart = number.substring(0, 1);
-            const afterPointPart = number.substring(2, number.length);
             return '0.0' + beforePointPart + afterPointPart;
         }
 
         if (number.indexOf('.') == 2) {
-            const beforePointPart = number.substring(0, 2);
-            const afterPointPart = number.substring(3, number.length);
             return '0.' + beforePointPart + afterPointPart;
         }
 
-        if (number.indexOf('.') > 2) {
-            const indexOfPoint = number.indexOf('.');
-            const beforePointPart = number.substring(0, indexOfPoint);
-            const afterPointPart = number.substring(indexOfPoint + 1, number.length);
-            
+        if (number.indexOf('.') > 2) {   
             const afterPointFuturePart = beforePointPart.substring(beforePointPart.length - 2, beforePointPart.length) + afterPointPart;
             const beforePointFuturePart = beforePointPart.substring(0, number.length - 2);
 
@@ -184,6 +173,10 @@ window.onload = function() {
             const afterPointFuturePart = number.substring(indexOfSegmentation, number.length);
             return beforePointFuturePart + '.' + afterPointFuturePart;
         }
+    }
+
+    function RemoveExtraEndZero(number) {
+        return (+number).toString();
     }
 
     document.getElementById("btn_op_equal").onclick = function() {
