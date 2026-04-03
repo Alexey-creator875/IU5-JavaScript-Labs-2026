@@ -51,11 +51,5 @@ export class MainPage {
             const productCard = new ProductCardComponent(this.pageRoot);
             productCard.render(item);
         })
-
-        const productCard = new ProductCardComponent(this.parent);
-        productCard.render(data);
-
-        const button = new ButtonComponent(this.parent);
-        button.render();
     } 
 }
