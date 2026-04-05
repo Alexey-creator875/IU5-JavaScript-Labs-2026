@@ -13,8 +13,12 @@ export class ProductComponent {
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">${data.title}</h5>
-                                <p class="card-text">${data.text}</p>
+                                <h3 class="card-title">${data.title}</h3>
+                                <h6 class="card-title"><b>Описание</b></h6>
+                                <p class="card-text">${data.description}</p>
+                                <p class="card-type"><b>Тип:</b> ${data.type}</p>
+                                <p class="card-assembly-time"><b>Время сборки:</b> ${data.assemblyTime}</p>
+                                <p class="card-price"><b>Стоимость:</b> ${data.price}</p>
                             </div>
                         </div>
                     </div>
