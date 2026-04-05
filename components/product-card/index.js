@@ -10,8 +10,9 @@ export class ProductCardComponent {
                     <img class="card-img-top" src="${data.src}" alt="картинка">
                     <div class="card-body">
                         <h5 class="card-title">${data.title}</h5>
-                        <p class="card-text">${data.text}</p>
-                        <button class="btn btn-primary" id="click-card-${data.id}" data-id="${data.id}">Нажми на меня</button>
+                        <p class="card-type">Тип: ${data.type}</p>
+                        <p class="card-price">Стоимость: ${data.price}</p>
+                        <button class="btn btn-primary" id="click-card-${data.id}" data-id="${data.id}">Посмотреть</button>
                     </div>
                 </div>
             `
