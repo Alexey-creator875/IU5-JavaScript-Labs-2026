@@ -1,4 +1,4 @@
-function erase(list) {
+export function erase(list) {
     const unwantedValues = [false, undefined, '', 0, null];
 
     return list.filter((item) => !unwantedValues.includes(item));

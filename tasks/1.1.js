@@ -1,4 +1,4 @@
-function concatenate(list, separator) {
+export function concatenate(list, separator) {
     if (list.length == 0) {
         return "";
     }

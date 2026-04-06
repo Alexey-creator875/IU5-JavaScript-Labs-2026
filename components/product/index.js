@@ -1,3 +1,6 @@
+import { concatenate } from "../../tasks/1.1.js";
+import { erase } from "../../tasks/1.10.js";
+
 export class ProductComponent {
     constructor(parent) {
         this.parent = parent
@@ -14,9 +17,10 @@ export class ProductComponent {
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h3 class="card-title">${data.title}</h3>
-                                <h6 class="card-title"><b>Описание</b></h6>
-                                <p class="card-text">${data.description}</p>
+                                <h6 class="card-description-highlight"><b>Описание</b></h6>
+                                <p class="card-description">${data.description}</p>
                                 <p class="card-type"><b>Тип:</b> ${data.type}</p>
+                                <p class="card-components"><b>Компоненты:</b> ${concatenate(erase(data.components), ", ")}</p>
                                 <p class="card-assembly-time"><b>Время сборки:</b> ${data.assemblyTime}</p>
                                 <p class="card-price"><b>Стоимость:</b> ${data.price}</p>
                             </div>
