@@ -14,7 +14,6 @@ export class MainPage {
                 title: "Ангара-1.2",
                 type: "лёгкий",
                 price: "1 200 млн ₽",
-                preset: { id: 1, title: "Ангара-1.2", model: "../../assets/models/Range Rover.glb" },
             },
             {
                 id: 2,
@@ -22,7 +21,6 @@ export class MainPage {
                 title: "Ангара-А5",
                 type: "тяжёлый",
                 price: "4 500 млн ₽",
-                preset: { id: 1, title: "Ангара-1.2", model: "../../assets/models/Big Tree.glb" },
             },
             {
                 id: 3,
@@ -30,7 +28,6 @@ export class MainPage {
                 title: "Ангара-А5В",
                 type: "сверхтяжёлый",
                 price: "8 700 млн ₽",
-                 preset: { id: 1, title: "Ангара-1.2", model: "../../assets/models/Palm Tree.glb" },
             }
         ]
     }
