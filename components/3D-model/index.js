@@ -33,41 +33,12 @@ export class Model3DComponent {
 
         let camera, controls;
 
-        const id = data.id;
-        const userId = null;
+        let toRender = [{ model: data.preset.model }];
 
-        let modelData = null;
-        let title = '';
-        let toRender = [];
-
-        if (id) {
-            modelData = data.preset;
-            title = data.title;
-
-            if (modelData?.models) {
-                toRender = modelData.models.map(x => ({ model: x.model }));
-            } else if (modelData?.model) {
-                toRender = [{ model: modelData.model }];
-            }
-
-            renderModel(camera, controls);
-        } else if (userId) {
-            getModelByIdFromDB(userId).then(userModel => {
-                if (!userModel) {
-                    document.getElementById('model-title').textContent = "Модель не найдена";
-                    return;
-                }
-                title = userModel.title;
-                toRender = [{ buffer: userModel.buffer, filename: userModel.filename }];
-                renderModel();
-            });
-        } else {
-            document.getElementById('model-title').textContent = 'Нет данных';
-        }
+        renderModel();
 
         // ---- ФУНКЦИЯ ОТРИСОВКИ ----
         function renderModel() {
-            //   document.getElementById('model-title').textContent = title || "3D модель";
             const canvas = document.getElementById('viewer-canvas');
             const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
             renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
