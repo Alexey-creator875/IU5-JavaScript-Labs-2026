@@ -38,6 +38,6 @@ export class ProductComponent {
         this.parent.insertAdjacentHTML('beforeend', html);
 
         let model3D = new Model3DComponent(document.getElementById('product'));
-        model3D.render(data);
+        model3D.render(data.model);
     }
 }

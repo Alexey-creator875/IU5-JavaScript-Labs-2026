@@ -27,10 +27,10 @@ export class Model3DComponent {
         )
     }
 
-    renderModel(data) {
+    renderModel(model) {
         let camera, controls;
 
-        let toRender = [{ model: data.preset.model }];
+        let toRender = [{ model: model }];
 
         const canvas = document.getElementById('viewer-canvas');
         const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
@@ -139,10 +139,10 @@ export class Model3DComponent {
         window.addEventListener('resize', resizeRendererToDisplaySize);
     }
 
-    render(data) {
+    render(model) {
         const html = this.getHTML();
         this.parent.insertAdjacentHTML('beforeend', html);
 
-        this.renderModel(data);
+        this.renderModel(model);
     }
 }
