@@ -1,0 +1,87 @@
+body {
+    background-image: url(assets/images/rocket_upp.jpg);
+    font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+header > .header-logo-name {
+    position:relative;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 75px;
+}
+
+header > .header-logo-name a {
+    text-decoration: none;
+}
+
+header > .header-logo-name .header-logo {
+    position: relative;
+    left: 10%;
+}
+
+header > .header-logo-name .header-logo img {
+    height: 40px;
+}
+
+header > .header-logo-name .header-name {
+    position: relative;
+    left: 15%;
+}
+
+header > .header-logo-name span {
+    font-size: 24px;
+    color: rgb(73, 73, 73);
+}
+
+header > .header-navigation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 40, 100, 0.5);
+    height: 55px;
+}
+
+header > .header-navigation > .menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0px; /* cancel bootstrap style */
+}
+
+header > .header-navigation > .menu > .menu-tab {
+    display: flex;
+    align-items: center;
+}
+
+header > .header-navigation > .menu > .menu-tab > a {
+    position: relative;
+    padding: 0 8px;
+    line-height: 55px;
+
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+header > .header-navigation > .menu > .menu-tab > a:hover {
+    transition: all 0.3s linear;
+    color: #0bb5ff;
+    background: rgb(33, 65, 128);
+}
+
+header > .header-navigation > .menu > .menu-tab > a::before {
+    transition: all 0.3s linear;
+    background: #fa0a11;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 3px;
+    content: "";
+}
+
+header > .header-navigation > .menu > .menu-tab > a:hover:before {
+    width: 100%;
+}

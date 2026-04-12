@@ -11,7 +11,7 @@ export class ProductComponent {
     getHTML(data) {
         return (
             `
-                <div id="product" class="card mb-3" style="width: 540px;">
+                <div id="product" class="card mb-3">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="${data.src}" class="img-fluid" alt="картинка">
