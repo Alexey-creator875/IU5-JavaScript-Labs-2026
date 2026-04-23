@@ -1,14 +1,18 @@
 body {
-    background-image: url(assets/images/rocket_upp.jpg);
     font-family: "Segoe UI", "Trebuchet MS", sans-serif;
 }
 
 header > .header-logo-name {
-    position:relative;
+    background-color: hsla(0,0%,100%,.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    width: 100%;
+    position: fixed;
+    transition: all .3s ease;
+    z-index: 1000;
+    min-height: 125px;
     display: flex;
     align-items: center;
-    background-color: white;
-    height: 75px;
 }
 
 header > .header-logo-name a {
@@ -34,54 +38,23 @@ header > .header-logo-name span {
     color: rgb(73, 73, 73);
 }
 
-header > .header-navigation {
+#root {
+    padding-top: 125px;
+    margin: 0 70px;
+    /* margin: 0 auto; */
+}
+
+/* Выбрать этот селектор на полном экране */
+/* .titlepage h1 {
+    font-size: 120px;
+    font-weight: 300;
+    line-height: 1em;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 40, 100, 0.5);
-    height: 55px;
-}
+    margin: 1rem 0 2rem 0;
+} */
 
-header > .header-navigation > .menu {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0px; /* cancel bootstrap style */
-}
-
-header > .header-navigation > .menu > .menu-tab {
-    display: flex;
-    align-items: center;
-}
-
-header > .header-navigation > .menu > .menu-tab > a {
-    position: relative;
-    padding: 0 8px;
-    line-height: 55px;
-
-    font-size: 15px;
-    color: #fff;
-    text-decoration: none;
-}
-
-header > .header-navigation > .menu > .menu-tab > a:hover {
-    transition: all 0.3s linear;
-    color: #0bb5ff;
-    background: rgb(33, 65, 128);
-}
-
-header > .header-navigation > .menu > .menu-tab > a::before {
-    transition: all 0.3s linear;
-    background: #fa0a11;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0%;
-    height: 3px;
-    content: "";
-}
-
-header > .header-navigation > .menu > .menu-tab > a:hover:before {
-    width: 100%;
+.titlepage h1 {
+    font-size: 60px;
+    line-height: 65px;
+    margin-bottom: 30px;
 }

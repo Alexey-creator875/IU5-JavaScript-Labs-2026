@@ -39,6 +39,9 @@ export class MainPage {
     getHTML() {
         return (
             `
+                <div class="titlepage">
+                    <h1>Ракетоносители</h1>
+                </div>
                 <div id="main-page" class="d-flex flex-wrap"><div/>
             `
         )
