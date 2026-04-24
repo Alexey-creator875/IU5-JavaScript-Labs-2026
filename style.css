@@ -58,3 +58,56 @@ header > .header-logo-name span {
     line-height: 65px;
     margin-bottom: 30px;
 }
+
+.product-card {
+    max-width: 1410px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #111;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    position: relative;
+}
+
+.product-card:hover .card-title{
+    text-decoration: underline;
+} 
+
+.product-card .pict {
+    flex-shrink: 0;
+    display: block;
+    overflow: hidden;
+    border-radius: 7.45px;
+    border: 1px solid #000;
+}
+
+.product-card .pict img {
+    position: relative;
+    width: 360px;
+    height: 316px;
+    object-fit: cover;
+}
+
+.product-card .text {
+    position: relative;
+    padding: 0 25px 0 55px;
+}
+
+.product-card .card-title {
+    color: #111;
+    line-height: 1.0em;
+    font-size: 2em;
+    overflow-wrap: break-word;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.product-card .card-info {
+    color: #111;
+    font-size: 1.1em;
+    margin-top: 10px;
+    display: block;
+}
