@@ -11,9 +11,9 @@ export class Model3DComponent {
     getHTML() {
         return (
             `
-            <div class="3D-model">
-                <h6 class="3D-title"><b>3D модель</b></h6>
-                <div id="viewer-controls" style="display:flex;gap:12px;align-items:center;margin:20px 0 0 20px;">
+            <div class="three-model">
+                <h6 class="three-title"><b>3D модель</b></h6>
+                <div id="viewer-controls">
                     <button id="zoom-in">+</button>
                     <button id="zoom-out">−</button>
                     <button id="view-front">Вид спереди</button>
