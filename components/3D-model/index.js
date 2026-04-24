@@ -16,7 +16,7 @@ export class Model3DComponent {
                 <div id="viewer-controls">
                     <button id="zoom-in">+</button>
                     <button id="zoom-out">−</button>
-                    <button id="view-front">Вид спереди</button>
+                    <button id="view-front">Cпереди</button>
                     <button id="view-back">Сзади</button>
                     <button id="view-left">Слева</button>
                     <button id="view-right">Справа</button>
