@@ -111,3 +111,25 @@ header > .header-logo-name span {
     margin-top: 10px;
     display: block;
 }
+
+
+#product {
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+}
+
+#product h2 {
+    margin-bottom: 20px;
+    color: #111;
+    font-size: 2em;
+}
+
+#product .media_embed img {
+    width: 500px;
+    height: 300px;
+}
+
+#product p {
+    margin-top: 1rem;
+}

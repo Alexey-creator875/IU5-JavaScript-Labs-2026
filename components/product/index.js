@@ -11,23 +11,18 @@ export class ProductComponent {
     getHTML(data) {
         return (
             `
-                <div id="product" class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="${data.src}" class="img-fluid" alt="картинка">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title">${data.title}</h3>
-                                <h6 class="card-description-highlight"><b>Описание</b></h6>
-                                <p class="card-description">${data.description}</p>
-                                <p class="card-type"><b>Тип:</b> ${data.type}</p>
-                                <p class="card-components"><b>Компоненты:</b> ${concatenate(erase(data.components), ", ")}</p>
-                                <p class="card-assembly-time"><b>Время сборки:</b> ${data.assemblyTime}</p>
-                                <p class="card-price"><b>Стоимость:</b> ${data.price}</p>
-                            </div>
-                        </div>
+                <div id="product">
+                    <h2>${data.title}</h2>
+
+                    <div class="media_embed">
+                        <img src="${data.src}" class="img-fluid" alt="картинка">
                     </div>
+
+                    <p class="card-description">${data.description}</p>
+                    <p class="card-type"><b>Тип:</b> ${data.type}</p>
+                    <p class="card-components"><b>Компоненты:</b> ${concatenate(erase(data.components), ", ")}</p>
+                    <p class="card-assembly-time"><b>Время сборки:</b> ${data.assemblyTime}</p>
+                    <p class="card-price"><b>Стоимость:</b> ${data.price}</p>
                 </div>
             `
         )
