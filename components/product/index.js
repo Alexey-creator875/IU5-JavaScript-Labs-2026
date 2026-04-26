@@ -14,8 +14,10 @@ export class ProductComponent {
                 <div id="product">
                     <h2>${data.title}</h2>
 
-                    <div class="media_embed">
-                        <img src="${data.src}" class="img-fluid" alt="картинка">
+                    <div class="my-slider">
+                        <div><img src="../../assets/Ангара-1.2.jpg"></div>
+                        <div><img src="../../assets/Ангара-А5.jpg"></div>
+                        <div><img src="../../assets/Ангара-А5В.jpeg"></div>
                     </div>
 
                     <p class="card-description">${data.description}</p>
@@ -31,6 +33,14 @@ export class ProductComponent {
     render(data) {
         const html = this.getHTML(data);
         this.parent.insertAdjacentHTML('beforeend', html);
+
+        
+        $('.my-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+        });
 
         let model3D = new Model3DComponent(document.getElementById('product'));
         model3D.render(data.model);
