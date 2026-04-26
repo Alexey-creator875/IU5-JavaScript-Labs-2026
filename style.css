@@ -57,7 +57,6 @@ header > .header-logo-name span {
     width: 100%;
     border-bottom: 1px solid #111;
     display: flex;
-    justify-content: space-between;
     text-decoration: none;
     position: relative;
 }
@@ -88,6 +87,7 @@ header > .header-logo-name span {
 
 .product-card .card-title {
     color: #111;
+    font-weight: bold;
     line-height: 1.0em;
     font-size: 2em;
     overflow-wrap: break-word;

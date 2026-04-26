@@ -17,7 +17,7 @@ export class ProductCardComponent {
 
                     <span class="text">
                         <span class="card-title">${data.title}</span>
-                        <span class="card-info">Тип: ${data.type}</span>
+                        <span class="card-info">${data.description}</span>
                         <span class="card-info">Стоимость: ${data.price}</span>
                     </span>
                 </div>
