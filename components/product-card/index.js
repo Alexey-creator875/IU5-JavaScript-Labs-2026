@@ -3,10 +3,6 @@ export class ProductCardComponent {
         this.parent = parent;
     }
 
-    // <div class="card-body">
-    //     <button class="btn btn-primary" id="click-card-${data.id}" data-id="${data.id}">Посмотреть</button>
-    // </div>
-
     getHTML(data) {
         return (
             `

@@ -1,5 +1,4 @@
 import {ProductComponent} from "../../components/product/index.js"
-import {BackButtonComponent} from "../../components/back-button/index.js";
 import {MainPage} from "../main/index.js";
 
 export class ProductPage {
