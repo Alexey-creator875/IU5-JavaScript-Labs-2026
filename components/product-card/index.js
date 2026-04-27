@@ -6,14 +6,16 @@ export class ProductCardComponent {
     getHTML(data) {
         return (
             `
-                <div class="card" style="width: 300px;">
-                    <img class="card-img-top" src="${data.src}" alt="картинка">
-                    <div class="card-body">
-                        <h5 class="card-title">${data.title}</h5>
-                        <p class="card-type">Тип: ${data.type}</p>
-                        <p class="card-price">Стоимость: ${data.price}</p>
-                        <button class="btn btn-primary" id="click-card-${data.id}" data-id="${data.id}">Посмотреть</button>
-                    </div>
+                <div class="product-card" id="click-card-${data.id}" data-id="${data.id}">
+                    <span class="pict">
+                        <img src="${data.src}" alt="картинка">
+                    </span>
+
+                    <span class="text">
+                        <span class="card-title">${data.title}</span>
+                        <span class="card-info">${data.description}</span>
+                        <span class="card-info">Стоимость: ${data.price}</span>
+                    </span>
                 </div>
             `
         )

@@ -3,12 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple App</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
 <body>
-<div id="root"></div>
-<script src="main.js" type="module"></script>
+    <header>
+        <div class="header-logo-name">
+            <a href="index.html" class="header-logo">
+                <img src="assets/images/logo_roscosmos.png" alt="Роскосмос">
+            </a>
+            <a href="index.html"class="header-name">
+                <span>СБОРКА РАКЕТОНОСИТЕЛЕЙ АНГАРА</span>
+            </a>
+        </div>
+    </header>
 
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <div id="root"></div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "../node_modules/three/build/three.module.js",
+                "three/examples/jsm/": "../node_modules/three/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="main.js" type="module"></script>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
