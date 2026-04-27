@@ -12,7 +12,9 @@ export class ProductPage {
         if (this.id == 1) {
             return {
                 id: 1,
-                src: "../../assets/Ангара-1.2.jpg",
+                src1: "../../assets/images/1_rocket/Ангара-1.2(1).jpg",
+                src2: "../../assets/images/1_rocket/Ангара-1.2(2).png",
+                src3: "../../assets/images/1_rocket/Ангара-1.2(3).jpg",
                 title: "Ангара-1.2",
                 type: "лёгкий",
                 price: "1 200 млн ₽",
@@ -26,7 +28,9 @@ export class ProductPage {
         if (this.id == 2) {
             return {
                 id: 2,
-                src: "../../assets/Ангара-А5.jpg",
+                src1: "../../assets/images/2_rocket/Ангара-А5(1).jpg",
+                src2: "../../assets/images/2_rocket/Ангара-А5(2).jpg",
+                src3: "../../assets/images/2_rocket/Ангара-А5(3).jpg",
                 title: "Ангара-А5",
                 type: "тяжёлый",
                 price: "4 500 млн ₽",
@@ -40,7 +44,9 @@ export class ProductPage {
         if (this.id == 3) {
             return {
                 id: 3,
-                src: "../../assets/Ангара-А5В.jpeg",
+                src1: "../../assets/images/3_rocket/Ангара-А5В(1).jpeg",
+                src2: "../../assets/images/3_rocket/Ангара-А5В(2).jpg",
+                src3: "../../assets/images/3_rocket/Ангара-А5В(3).jpg",
                 title: "Ангара-А5В",
                 type: "сверхтяжёлый",
                 price: "8 700 млн ₽",

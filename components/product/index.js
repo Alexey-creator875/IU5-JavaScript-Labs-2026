@@ -15,8 +15,9 @@ export class ProductComponent {
                     <h2>${data.title}</h2>
 
                     <div class="my-slider">
-                        <div><img src="${data.src}"></div>
-                        <div><img src="../../assets/Ангара-1.2.svg.png"></div>
+                        <div><img src="${data.src1}"></div>
+                        <div><img src="${data.src2}"></div>
+                        <div><img src="${data.src3}"></div>
                     </div>
 
                     <p class="card-description">${data.description}</p>
