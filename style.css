@@ -21,7 +21,7 @@ header > .header-logo-name a {
 
 header > .header-logo-name .header-logo {
     position: relative;
-    left: 10%;
+    left: 5%;
 }
 
 header > .header-logo-name .header-logo img {
@@ -30,7 +30,7 @@ header > .header-logo-name .header-logo img {
 
 header > .header-logo-name .header-name {
     position: relative;
-    left: 15%;
+    left: 6%;
 }
 
 header > .header-logo-name span {
