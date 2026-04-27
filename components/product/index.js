@@ -1,8 +1,3 @@
-import { concatenate } from "../../tasks/1.1.js";
-import { erase } from "../../tasks/1.10.js";
-
-import { Model3DComponent } from "../3D-model/index.js";
-
 export class ProductComponent {
     constructor(parent) {
         this.parent = parent
@@ -22,7 +17,7 @@ export class ProductComponent {
 
                     <p class="card-description">${data.description}</p>
                     <p class="card-type"><b>Тип:</b> ${data.type}</p>
-                    <p class="card-components"><b>Компоненты:</b> ${concatenate(erase(data.components), ", ")}</p>
+                    <p class="card-components"><b>Компоненты:</b> ${data.components}</p>
                     <p class="card-assembly-time"><b>Время сборки:</b> ${data.assemblyTime}</p>
                     <p class="card-price"><b>Стоимость:</b> ${data.price}</p>
                 </div>
@@ -41,8 +36,5 @@ export class ProductComponent {
             speed: 500,
             slidesToShow: 1,
         });
-
-        let model3D = new Model3DComponent(document.getElementById('product'));
-        model3D.render(data.model);
     }
 }
