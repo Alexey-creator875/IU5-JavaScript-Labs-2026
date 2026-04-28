@@ -159,12 +159,21 @@ header > .header-logo-name span {
 }
 
 .three-model #viewer-controls button {
-    background-color: #ef3443;
-    color: #fff;
+    border: none;
+    color: #111;
+    background-color: #fff;
+    border: 1px solid #111;
     border-radius: 30px;
     line-height: 35px;
     display: inline-block;
     padding: 0 1.7em;
+    transition: all .3s ease;
+}
+
+.three-model #viewer-controls button:hover {
+    background-color: #ef3443;
+    border: 1px solid #ef3443;
+    color: white;
 }
 
 .three-model #viewer-canvas {
