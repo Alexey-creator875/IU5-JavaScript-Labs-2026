@@ -61,10 +61,6 @@ header > .header-logo-name span {
     position: relative;
 }
 
-.product-card:hover .card-title{
-    text-decoration: underline;
-} 
-
 .product-card .pict {
     flex-shrink: 0;
     display: block;
@@ -82,7 +78,7 @@ header > .header-logo-name span {
 
 .product-card .text {
     position: relative;
-    padding: 0 25px 0 55px;
+    padding: 45px 25px 0 55px;
 }
 
 .product-card .card-title {
@@ -100,6 +96,36 @@ header > .header-logo-name span {
     font-size: 1.1em;
     margin-top: 10px;
     display: block;
+}
+
+.product-card .arr {
+    width: 86px;
+    height: 86px;
+    flex-shrink: 0;
+    color: #111;
+    background-color: #fff;
+    border: 1px solid #111;
+    align-self: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+}
+
+.product-card .arr svg {
+    width: 75%;
+    height: 75%;
+}
+
+.product-card:hover .card-title{
+    text-decoration: underline;
+}
+
+.product-card:hover .arr {
+  background-color: #ef3443;
+  border: 1px solid #ef3443;
+  color: white;
 }
 
 
