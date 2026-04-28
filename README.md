@@ -24,13 +24,14 @@
 Российский сайт компании "Роскосмос", вкладка "Новости": https://www.roscosmos.ru/102/.
 
 ![Фото 1](assets/readme/roscosmos_website.png)
+![Фото 2](assets/readme/roscosmos_website_news_selected.png)
+![Фото 3](assets/readme/roscosmos_website_opened_news.png)
 
 ## Результат работы
 
-![Фото 2](assets/readme/sign_operation_before.png)
-![Фото 3](assets/readme/sign_operation_after.png)
-![Фото 4](assets/readme/sign_operation_after.png)
-![Фото 5](assets/readme/sign_operation_after.png)
+![Фото 4](assets/readme/rocket_launch.png)
+![Фото 5](assets/readme/rocket_launch_selected.png)
+![Фото 6](assets/readme/rocket_launch_opened.png)
 
 ## Дополнительное задание
 
@@ -65,5 +66,5 @@ $('.my-slider').slick({
 ```
 Скрипт получает элемент с классом "my-slider" и преобразовывает его в сложный, но отзывчивый слайдер с помощью метода ```slick()```. На вход метод принимает кортеж с параметрами слайдера, который необходимо создать. 
 
-![Фото 6](assets/readme/sign_operation_after.png)
-![Фото 7](assets/readme/sign_operation_after.png)
+![Фото 7](assets/readme/slider_first.png)
+![Фото 8](assets/readme/slider_third.png)
