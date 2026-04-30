@@ -1,8 +1,8 @@
 const launchVehiclesService = require('../services/launchVehiclesService');
 
 const getAllLaunchVehicles = (req, res) => {
-    const { title } = req.query;
-    const launchVehicles = launchVehiclesService.findAll(title);
+    const { title, price } = req.query;
+    const launchVehicles = launchVehiclesService.findAll(title, price);
     res.json(launchVehicles);
 };
 
