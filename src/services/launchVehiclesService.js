@@ -8,16 +8,6 @@ const init = (filePath) => {
     dataFilePath = filePath;
 };
 
-// const findAll = (title) => {
-//     const launchVehicles = fileService.readData(dataFilePath);
-//     if (title) {
-//         return launchVehicles.filter(launchVehicle => 
-//             launchVehicle.title.toLowerCase().includes(title.toLowerCase())
-//         );
-//     }
-//     return launchVehicles;
-// };
-
 const findAll = (title, price) => {
     const launchVehicles = fileService.readData(dataFilePath);
 
