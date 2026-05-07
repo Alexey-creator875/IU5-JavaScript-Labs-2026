@@ -1,7 +1,7 @@
 import {ProductCardComponent} from "../../components/product-card/index.js";
 import { ProductPage } from "../product/index.js";
 import {ajax} from "../../modules/ajax.js";
-import {stockUrls} from "../../modules/stockUrls.js";
+import {launchVehicleUrls} from "../../modules/launchVehicleUrls.js";
 
 
 export class MainPage {
@@ -10,7 +10,7 @@ export class MainPage {
     }
 
     getData() {
-        ajax.get(stockUrls.getStocks(), (data) => {
+        ajax.get(launchVehicleUrls.getLaunchVehicles(), (data) => {
             this.renderData(data);
         })
     }
@@ -45,14 +45,10 @@ export class MainPage {
     }
     
     render() {
-        this.parent.innerHTML = '';
-        const html = this.getHTML();
-        this.parent.insertAdjacentHTML('beforeend', html);
+        this.parent.innerHTML = ''
+        const html = this.getHTML()
+        this.parent.insertAdjacentHTML('beforeend', html)
 
-        const data = this.getData();
-        data.forEach((item) => {
-            const productCard = new ProductCardComponent(this.pageRoot);
-            productCard.render(item, this.clickCard.bind(this));
-        })
-    } 
+        this.getData()
+    }
 }
