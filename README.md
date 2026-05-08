@@ -1,4 +1,4 @@
-# Лабораторная работа №3. Создание карточек
+# Лабораторная работа №5. Добаление AJAX запросов к API
 
 ## Содержание
 
@@ -10,14 +10,11 @@
 
 ## Постановка задачи
 
-**Цель** данной лабораторной работы - знакомство с node, npm, написание простого приложения на JavaScript. В ходе выполнения работы, предстоит реализовать рендеринг карточек с продуктом, причём должно быть возмодно открыть каждую карточку для прост=мотра детальной информации.
+**Цель** данной лабораторной работы - взаимодействие с внешним API через XMLHttpRequest. В ходе выполнения работы, предстоит реализовать простое взаимодействие с внешним API, получение данных и вывод их в интерфейс пользователя.
 
 ## Тема
 
 **Сборка ракетоносителей Ангара разных типов**
-
-В соответствии с темой, карточки содержат информацию у разных ракетоносителях.
-
 
 ## Сайт, выбранный за основу
 
@@ -29,42 +26,31 @@
 
 ## Результат работы
 
-![Фото 4](assets/readme/rocket_launch.png)
-![Фото 5](assets/readme/rocket_launch_selected.png)
-![Фото 6](assets/readme/rocket_launch_opened.png)
+Раньше данные хранились в коде JavaScript. Метод `getData()` возвращал статический набор данных `data`.
+
+Теперь метод `getData()` делает запрос на бэкенд сервер. Результат приходит через колбэк, который рендерит карточки продуктов.
+
+Чтобы обойти политику CORS, блокирующую запросы на другие серверы, используется специальное расширение `CORS Unblock`.
+
+Данная схема используется для главной страницы и страницы продукта. Ниже приведён код для главной страницы:
+
+```javascript
+getData() {
+    ajax.get(launchVehicleUrls.getLaunchVehicles(), (data) => {
+        this.renderData(data);
+    })
+}
+
+renderData(items) {
+    items.forEach((item) => {
+        const productCard = new ProductCardComponent(this.pageRoot)
+        productCard.render(item, this.clickCard.bind(this))
+    })
+}
+```
+
+![Фото 4](assets/readme/main_page.png)
+![Фото 5](assets/readme/product_page.png)
+![Фото 6](assets/readme/response_with_data.png)
 
 ## Дополнительное задание
-
-При открытии подробной информации о ракетоносителе пользователя встречает **слайдер** с возможностью навигации по изображениям с помощью точек-индикаторов.
-
-Для реализации используется библиотека Slick Carousel. Необходимо подключить необходимые файлы со стилями в ```<head>```:
-```html
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-```
-и скрипты для создания слайдера в ```<body>```:
-```javascript
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-```
-После успешного подключения всех необходимых файлов, достаточно поместить простой удобочитаемый html код в проект:
-```html
-<div class="my-slider">
-    <div><img src="${data.src1}"></div>
-    <div><img src="${data.src2}"></div>
-    <div><img src="${data.src3}"></div>
-</div>
-```
-и JavaScript код:
-```javascript
-$('.my-slider').slick({
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-});
-```
-Скрипт получает элемент с классом "my-slider" и преобразовывает его в сложный, но отзывчивый слайдер с помощью метода ```slick()```. На вход метод принимает кортеж с параметрами слайдера, который необходимо создать. 
-
-![Фото 7](assets/readme/slider_first.png)
-![Фото 8](assets/readme/slider_third.png)
