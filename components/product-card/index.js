@@ -8,7 +8,7 @@ export class ProductCardComponent {
             `
                 <div class="product-card" id="click-card-${data.id}" data-id="${data.id}">
                     <span class="pict">
-                        <img src="${data.src}" alt="картинка">
+                        <img src="${data.src1}" alt="картинка">
                     </span>
 
                     <span class="text">
