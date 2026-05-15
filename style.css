@@ -43,6 +43,12 @@ header > .header-logo-name span {
     margin: 0 70px;
 }
 
+footer > .footer-row {
+    display: block;
+    height: 150px;
+    background-color: transparent;
+}
+
 .titlepage h1 {
     font-size: 60px;
     line-height: 65px;

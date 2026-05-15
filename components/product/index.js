@@ -20,6 +20,8 @@ export class ProductComponent {
                     <p class="card-components"><b>Компоненты:</b> ${data.components}</p>
                     <p class="card-assembly-time"><b>Время сборки:</b> ${data.assemblyTime}</p>
                     <p class="card-price"><b>Стоимость:</b> ${data.price}</p>
+                    <input type="string" class="new-price-input" placeholder="Новая цена">
+                    <button class="save-price-btn">Сохранить</button>
                 </div>
             `
         )
