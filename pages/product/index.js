@@ -17,7 +17,15 @@ export class ProductPage {
 
     renderData(item) {
         const product = new ProductComponent(this.pageRoot)
-        product.render(item)
+        product.render(item, this.updatePrice.bind(this))
+    }
+
+    updatePrice() {
+        console.log("work");
+        console.log(this.id);
+
+        const newPrice = document.getElementById("new-price-input").value;
+        console.log(newPrice);
     }
 
     get pageRoot() {
@@ -30,11 +38,6 @@ export class ProductPage {
                 <div id="product-page"></div>
             `
         )
-    }
-
-    clickBack() {
-        const mainPage = new MainPage(this.parent)
-        mainPage.render()
     }
 
     render() {

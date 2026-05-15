@@ -20,17 +20,24 @@ export class ProductComponent {
                     <p class="card-components"><b>Компоненты:</b> ${data.components}</p>
                     <p class="card-assembly-time"><b>Время сборки:</b> ${data.assemblyTime}</p>
                     <p class="card-price"><b>Стоимость:</b> ${data.price}</p>
-                    <input type="string" class="new-price-input" placeholder="Новая цена">
-                    <button class="save-price-btn">Сохранить</button>
+                    <input type="string" id="new-price-input" placeholder="Новая цена">
+                    <button id="save-price-btn">Сохранить</button>
                 </div>
             `
         )
     }
 
-    render(data) {
+    addListeners(data, listener) {
+        document
+            .getElementById("save-price-btn")
+            .addEventListener("click", listener);
+    }
+
+    render(data, listener) {
         const html = this.getHTML(data);
         this.parent.insertAdjacentHTML('beforeend', html);
 
+        this.addListeners(data, listener)
         
         $('.my-slider').slick({
             dots: true,
