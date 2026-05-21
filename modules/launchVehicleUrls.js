@@ -15,11 +15,11 @@ class LaunchVehicleUrls {
         return `${this.baseUrl}/launchVehicles`;
     }
 
-    removeLaunchVehicleById() {
+    removeLaunchVehicleById(id) {
         return `${this.baseUrl}/launchVehicles/${id}`;
     }
 
-    updateLaunchVehicleById() {
+    updateLaunchVehicleById(id) {
         return `${this.baseUrl}/launchVehicles/${id}`;
     }
 }

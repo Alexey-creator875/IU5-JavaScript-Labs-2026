@@ -26,6 +26,13 @@ export class ProductPage {
 
         const newPrice = document.getElementById("new-price-input").value;
         console.log(newPrice);
+
+        setTimeout(() => {
+            ajax.patch(launchVehicleUrls.updateLaunchVehicleById(this.id), {price: newPrice}, () => {
+            console.log("обновление произошло")
+        });
+        }, 5000);
+
     }
 
     get pageRoot() {
