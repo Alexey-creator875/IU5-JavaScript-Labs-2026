@@ -1,6 +1,7 @@
 export class BackButtonComponent {
-    constructor(parent) {
+    constructor(parent, label) {
         this.parent = parent;
+        this.label = label;
     }
 
     addListeners(listener) {
@@ -12,7 +13,7 @@ export class BackButtonComponent {
     getHTML() {
         return (
             `
-                <button id="back-button" type="button">Ракетоносители</button>
+                <button id="back-button" type="button">${this.label}</button>
             `
         )
     }

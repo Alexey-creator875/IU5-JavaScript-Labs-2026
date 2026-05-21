@@ -58,7 +58,7 @@ export class ProductPage {
         const html = this.getHTML()
         this.parent.insertAdjacentHTML('beforeend', html)
 
-        const backButton = new BackButtonComponent(this.pageRoot)
+        const backButton = new BackButtonComponent(this.pageRoot, "Ракетоносители")
         backButton.render(this.clickBack.bind(this))
 
         this.getData()
