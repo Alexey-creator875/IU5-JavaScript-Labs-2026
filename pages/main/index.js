@@ -1,7 +1,8 @@
-import {ProductCardComponent} from "../../components/product-card/index.js";
+import { SearchFieldComponent } from "../../components/search-field/index.js";
+import { ProductCardComponent } from "../../components/product-card/index.js";
 import { ProductPage } from "../product/index.js";
-import {ajax} from "../../modules/ajax.js";
-import {launchVehicleUrls} from "../../modules/launchVehicleUrls.js";
+import { ajax } from "../../modules/ajax.js";
+import { launchVehicleUrls } from "../../modules/launchVehicleUrls.js";
 
 
 export class MainPage {
@@ -9,8 +10,8 @@ export class MainPage {
         this.parent = parent;
     }
 
-    getData() {
-        ajax.get(launchVehicleUrls.getLaunchVehicles(), (data) => {
+    getData(price = null) {
+        ajax.get(launchVehicleUrls.getLaunchVehicles(price), (data) => {
             this.renderData(data);
         })
     }
@@ -26,12 +27,17 @@ export class MainPage {
         return document.getElementById('main-page');
     }
 
+    get searchSpot() {
+        return document.getElementById('search-spot');
+    }
+
     getHTML() {
         return (
             `
                 <div class="titlepage">
                     <h1>Ракетоносители</h1>
                 </div>
+                <div id="search-spot"></div>
                 <div id="main-page" class="d-flex flex-wrap"><div/>
             `
         )
@@ -43,11 +49,21 @@ export class MainPage {
         const productPage = new ProductPage(this.parent, cardId);
         productPage.render();
     }
+
+    clickSearch() {
+        this.pageRoot.innerHTML = '';
+
+        const searchText = document.getElementById("search-input").value;
+        this.getData(searchText);
+    }
     
     render() {
         this.parent.innerHTML = ''
         const html = this.getHTML()
         this.parent.insertAdjacentHTML('beforeend', html)
+
+        const searchField = new SearchFieldComponent(this.searchSpot)
+        searchField.render(this.clickSearch.bind(this))
 
         this.getData()
     }

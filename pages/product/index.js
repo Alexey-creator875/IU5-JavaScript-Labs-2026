@@ -22,18 +22,11 @@ export class ProductPage {
     }
 
     updatePrice() {
-        console.log("work");
-        console.log(this.id);
-
         const newPrice = document.getElementById("new-price-input").value;
-        console.log(newPrice);
 
         setTimeout(() => {
-            ajax.patch(launchVehicleUrls.updateLaunchVehicleById(this.id), {price: newPrice}, () => {
-            console.log("обновление произошло")
-        });
-        }, 5000);
-
+            ajax.patch(launchVehicleUrls.updateLaunchVehicleById(this.id), {price: newPrice}, () => {});
+        }, 20000);
     }
 
     get pageRoot() {

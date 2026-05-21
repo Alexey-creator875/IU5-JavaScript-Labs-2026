@@ -3,7 +3,11 @@ class LaunchVehicleUrls {
         this.baseUrl = 'http://localhost:3000';
     }
 
-    getLaunchVehicles() {
+    getLaunchVehicles(price = null) {
+        if (price) {
+            return `${this.baseUrl}/launchVehicles?price=${price}`;
+        }
+
         return `${this.baseUrl}/launchVehicles`;
     }
 

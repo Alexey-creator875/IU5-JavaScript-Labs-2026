@@ -151,7 +151,7 @@ footer > .footer-row {
     margin-top: 1rem;
 }
 
-#back-button {
+.black-btn {
     padding: 0px 15px;
     margin-bottom: 15px;
     background-color: white;
@@ -162,11 +162,21 @@ footer > .footer-row {
     height: 31px;
     transition: all 0.3s linear;
 }
-
-#back-button:hover {
+.black-btn:hover {
     background-color: #111;
     border: 1px solid #111;
     color: white;
+}
+
+.black-input {
+    padding: 0px 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    color: #111;
+    border: 1px solid #111;
+    border-radius: 31px;
+    line-height: 31px;
+    height: 31px;
 }
 
 .my-slider {

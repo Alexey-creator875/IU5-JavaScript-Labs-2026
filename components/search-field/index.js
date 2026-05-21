@@ -1,19 +1,21 @@
-export class BackButtonComponent {
-    constructor(parent, label) {
+export class SearchFieldComponent {
+    constructor(parent) {
         this.parent = parent;
-        this.label = label;
     }
 
     addListeners(listener) {
         document
-            .getElementById("back-button")
+            .getElementById("search-button")
             .addEventListener("click", listener)
     }
 
     getHTML() {
         return (
             `
-                <button id="back-button" class="black-btn" type="button">${this.label}</button>
+                <div id="search-field">
+                    <input type="text" id="search-input" class="black-input" placeholder="Поиск...">
+                    <button id="search-button" class="black-btn">Найти</button>
+                </div>
             `
         )
     }
