@@ -86,5 +86,21 @@ async getData(price = null) {
 - Замена всех вызовов и использований XMLHttpRequest на fetch
 
 ### Выполнение
+Оставшиеся методы для выполнения запросов (`POST`, `PATCH`, `DELETE`) переписаны с использованием метода `fetch()` и ключевых слов `async` и `await`.
+
+Метод для обновления стоимости на странице продукта, также переписан под новый механизм:
+```javascript
+async updatePrice() {
+    const newPrice = document.getElementById("new-price-input").value;
+
+    setTimeout(() => {
+        ajax.patch(launchVehicleUrls.updateLaunchVehicleById(this.id), {price: newPrice});
+    }, 20000);
+}
+```
 
 ### Демонстрация
+
+![Фото 5](assets/readme/before_PATCH.png)
+![Фото 6](assets/readme/do_PATCH.png)
+![Фото 7](assets/readme/after_PATCH.png)
