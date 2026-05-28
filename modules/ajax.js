@@ -2,7 +2,7 @@ class Ajax {
     /**
      * GET запрос
      * @param {string} url - Адрес запроса
-     * @param {function} callback - Функция обратного вызова (data, status)
+     * @returns {Promise<any>} - Промис с данными ответа
      */
     async get(url) {
         try {
@@ -17,61 +17,60 @@ class Ajax {
      * POST запрос
      * @param {string} url - Адрес запроса
      * @param {object} data - Данные для отправки
-     * @param {function} callback - Функция обратного вызова (data, status)
+     * @returns {Promise<any>} - Промис с данными ответа
      */
-    post(url, data, callback) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', url);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify(data));
-
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4) {
-                this._handleResponse(xhr, callback);
-            }
-        };
+    async post(url, data) {
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            return this._handleResponse(response);
+        } catch(error) {
+            console.log(`Невозможно получить доступ к серверу: ${error}`);
+        }
     }
 
     /**
      * PATCH запрос
      * @param {string} url - Адрес запроса
      * @param {object} data - Данные для обновления
-     * @param {function} callback - Функция обратного вызова (data, status)
+     * @returns {Promise<any>} - Промис с данными ответа
      */
-    patch(url, data, callback) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('PATCH', url);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify(data));
-
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4) {
-                this._handleResponse(xhr, callback);
-            }
-        };
+    async patch(url, data) {
+        try {
+            const response = await fetch(url, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            return this._handleResponse(response);
+        } catch(error) {
+            console.log(`Невозможно получить доступ к серверу: ${error}`);
+        }
     }
 
     /**
      * DELETE запрос
      * @param {string} url - Адрес запроса
-     * @param {function} callback - Функция обратного вызова (data, status)
+     * @returns {Promise<any>} - Промис с данными ответа
      */
-    delete(url, callback) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('DELETE', url);
-        xhr.send();
-
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4) {
-                this._handleResponse(xhr, callback);
-            }
-        };
+    async delete(url) {
+        try {
+            const response = await fetch(url, {
+                method: 'DELETE'
+            });
+            return this._handleResponse(response);
+        } catch(error) {
+            console.log(`Невозможно получить доступ к серверу: ${error}`);
+        }
     }
 
     /**
      * Обработчик ответа (приватный метод)
-     * @param {XMLHttpRequest} xhr - Объект запроса
-     * @param {function} callback - Функция обратного вызова
+     * @param {Response} response - Объект ответа fetch
+     * @returns {Promise<any>} - Промис с данными или ошибкой
      */
     async _handleResponse(response) {
         if (!response.ok) {

@@ -24,11 +24,11 @@ export class ProductPage {
         product.render(item, this.updatePrice.bind(this))
     }
 
-    updatePrice() {
+    async updatePrice() {
         const newPrice = document.getElementById("new-price-input").value;
 
         setTimeout(() => {
-            ajax.patch(launchVehicleUrls.updateLaunchVehicleById(this.id), {price: newPrice}, () => {});
+            ajax.patch(launchVehicleUrls.updateLaunchVehicleById(this.id), {price: newPrice});
         }, 20000);
     }
 
