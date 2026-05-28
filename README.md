@@ -1,4 +1,4 @@
-# Лабораторная работа №5. Добаление AJAX запросов к API
+# Лабораторная работа №6. Знакомство с promise и fetch. Cборка клиентской части
 
 ## Содержание
 
@@ -10,7 +10,11 @@
 
 ## Постановка задачи
 
-**Цель** данной лабораторной работы - взаимодействие с внешним API через XMLHttpRequest. В ходе выполнения работы, предстоит реализовать простое взаимодействие с внешним API, получение данных и вывод их в интерфейс пользователя.
+Лабораторная состоит из 2-х частей:
+
+**Первая часть** данной лабораторной работы заключается в изменении механизма взаимодействия с внешним API: в прошлой лабораторной работе использовался XMLHttpRequest, в этой - современный метод fetch. 
+
+**Вторая часть** лабораторной работы заключается в сборке клиентской части приложения: необходимо "сбилдить" клиентскую часть с помощью системы сборки, а также добавить в серверную часть возможность раздачи клиентской части в качестве статики во избежание проблем с CORS.
 
 ## Тема
 
@@ -26,31 +30,61 @@
 
 ## Результат работы
 
-Раньше данные хранились в коде JavaScript. Метод `getData()` возвращал статический набор данных `data`.
+### Замена XHR на fetch с использованием async, await
 
-Теперь метод `getData()` делает запрос на бэкенд сервер. Результат приходит через колбэк, который рендерит карточки продуктов.
+Метод для выполнения `GET` запроса в классе `Ajax` переписан c использованием ключевых слов async и await, делающих работу с promise более удобной. Также используется метод `fetch()` который выполняет сам запрос.
 
-Чтобы обойти политику CORS, блокирующую запросы на другие серверы, используется специальное расширение `CORS Unblock`.
-
-Данная схема используется для главной страницы и страницы продукта. Ниже приведён код для главной страницы:
+Запрос, упакованный в промис, передаётся в обработчик. Если запрос по какой то причине не валидный, выводится сообщение об ошибке, когда промис разрешится. Если с запросом всё хорошо, json парсится и в результате возвращаются данные с сервера, обёрнутые в неразрешённый промис.
 
 ```javascript
-getData() {
-    ajax.get(launchVehicleUrls.getLaunchVehicles(), (data) => {
-        this.renderData(data);
-    })
+async get(url) {
+    try {
+        const response = await fetch(url);
+        return this._handleResponse(response);
+    } catch(error) {
+        console.log(`Невозможно получить доступ к серверу: ${error}`);
+    }
 }
 
-renderData(items) {
-    items.forEach((item) => {
-        const productCard = new ProductCardComponent(this.pageRoot)
-        productCard.render(item, this.clickCard.bind(this))
-    })
+async _handleResponse(response) {
+    if (!response.ok) {
+        const text = await response.text();
+        console.log(`HTTP ${response.status}: ${text || response.statusText}`);
+    }
+    const contentType = response.headers.get('content-type');
+    if (contentType && contentType.includes('application/json')) {
+        return response.json();
+    }
+    return response.text();
 }
 ```
 
-![Фото 4](assets/readme/main_page.png)
-![Фото 5](assets/readme/product_page.png)
-![Фото 6](assets/readme/response_with_data.png)
+Метод `getData()` главной страницы ждёт разрешения промиса, после чего рендерит содержимое. Всё то же самое сделано для страницы продукта.
+
+```javascript
+async getData(price = null) {
+    try {
+        const data = await ajax.get(launchVehicleUrls.getLaunchVehicles(price));
+        this.renderData(data);
+    } catch (error) {
+        console.error('Ошибка загрузки данных:', error);
+    }
+}
+```
+
+### Сборка клиентской части с использованием vite
+
+Запуская команду `npm run build` собирается клиентская часть в папке `/public`.
+![Фото 4](assets/readme/build_project.png)
+![Фото 5](assets/readme/built_public.png)
+
 
 ## Дополнительное задание
+
+### Формулировка 
+
+- Замена всех вызовов и использований XMLHttpRequest на fetch
+
+### Выполнение
+
+### Демонстрация
