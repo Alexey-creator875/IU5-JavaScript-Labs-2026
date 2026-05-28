@@ -4,16 +4,14 @@ class Ajax {
      * @param {string} url - Адрес запроса
      * @param {function} callback - Функция обратного вызова (data, status)
      */
-    get(url, callback) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', url);
-        xhr.send();
+    async get(url) {
+        try {
+            const response = await fetch(url);
+            return this._handleResponse(response);
+        } catch(error) {
+            console.log(`Невозможно получить доступ к серверу: ${error}`);
+        }
 
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4) {
-                this._handleResponse(xhr, callback);
-            }
-        };
     }
 
     /**
@@ -76,14 +74,16 @@ class Ajax {
      * @param {XMLHttpRequest} xhr - Объект запроса
      * @param {function} callback - Функция обратного вызова
      */
-    _handleResponse(xhr, callback) {
-        try {
-            const data = xhr.responseText ? JSON.parse(xhr.responseText) : null;
-            callback(data, xhr.status);
-        } catch (e) {
-            console.error('Ошибка парсинга JSON:', e);
-            callback(null, xhr.status);
+    async _handleResponse(response) {
+        if (!response.ok) {
+            const text = await response.text();
+            console.log(`HTTP ${response.status}: ${text || response.statusText}`);
         }
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+            return response.json();
+        }
+        return response.text();
     }
 }
 

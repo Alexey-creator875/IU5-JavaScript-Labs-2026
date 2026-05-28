@@ -10,10 +10,13 @@ export class MainPage {
         this.parent = parent;
     }
 
-    getData(price = null) {
-        ajax.get(launchVehicleUrls.getLaunchVehicles(price), (data) => {
+    async getData(price = null) {
+        try {
+            const data = await ajax.get(launchVehicleUrls.getLaunchVehicles(price));
             this.renderData(data);
-        })
+        } catch (error) {
+            console.error('Ошибка загрузки данных:', error);
+        }
     }
 
     renderData(items) {
