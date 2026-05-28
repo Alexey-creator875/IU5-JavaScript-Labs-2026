@@ -10,10 +10,13 @@ export class ProductPage {
         this.id = id;
     }
 
-    getData() {
-        ajax.get(launchVehicleUrls.getLaunchVehicleById(this.id), (data) => {
+    async getData() {
+        try {
+            const data = await ajax.get(launchVehicleUrls.getLaunchVehicleById(this.id));
             this.renderData(data);
-        })
+        } catch (error) {
+            console.error('Ошибка загрузки данных:', error);
+        }
     }
 
     renderData(item) {

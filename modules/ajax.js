@@ -11,7 +11,6 @@ class Ajax {
         } catch(error) {
             console.log(`Невозможно получить доступ к серверу: ${error}`);
         }
-
     }
 
     /**
