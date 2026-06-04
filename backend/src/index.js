@@ -12,6 +12,9 @@ const DATA_FILE_PATH = path.join(__dirname, 'data/launchVehicles.json');
 // Инициализируем сервис с путем к файлу данных
 launchVehiclesService.init(DATA_FILE_PATH);
 
+// Раздаём статику
+app.use(express.static(path.join(__dirname, '..', 'public')));
+
 // 1. Встроенный middleware для парсинга JSON
 app.use(express.json());
 
