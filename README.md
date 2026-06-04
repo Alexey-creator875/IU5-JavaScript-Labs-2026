@@ -75,8 +75,8 @@ async getData(price = null) {
 ### Сборка клиентской части с использованием vite
 
 Запуская команду `npm run build` собирается клиентская часть в папке `/public`.
-![Фото 4](assets/readme/build_project.png)
-![Фото 5](assets/readme/built_public.png)
+![Фото 4](readme_assets/build_project.png)
+![Фото 5](readme_assets/built_public.png)
 
 
 ## Дополнительное задание
