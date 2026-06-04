@@ -24,9 +24,9 @@
 
 Российский сайт компании "Роскосмос", вкладка "Новости": https://www.roscosmos.ru/102/.
 
-![Фото 1](assets/readme/roscosmos_website.png)
-![Фото 2](assets/readme/roscosmos_website_news_selected.png)
-![Фото 3](assets/readme/roscosmos_website_opened_news.png)
+![Фото 1](readme_assets/roscosmos_website.png)
+![Фото 2](readme_assets/roscosmos_website_news_selected.png)
+![Фото 3](readme_assets/roscosmos_website_opened_news.png)
 
 ## Результат работы
 
@@ -101,6 +101,6 @@ async updatePrice() {
 
 ### Демонстрация
 
-![Фото 5](assets/readme/before_PATCH.png)
-![Фото 6](assets/readme/do_PATCH.png)
-![Фото 7](assets/readme/after_PATCH.png)
+![Фото 5](readme_assets/before_PATCH.png)
+![Фото 6](readme_assets/do_PATCH.png)
+![Фото 7](readme_assets/after_PATCH.png)
